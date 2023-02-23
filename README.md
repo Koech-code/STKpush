@@ -12,7 +12,8 @@ Integrates Safaricom daraja API and performs an STKPush.
 ## Technologies Used
 
 - PYTHON `3.6`
-- DJANGO
+- DJANGO 
+- DJANGO REST FRAMEWORK
 - MySql
 
 ### Installation Process
@@ -46,12 +47,11 @@ $ git clone https://github.com/Koech-code/STKpush.git
 Register 
 Login 
 Lipanampesa
-
 ```
 
 ## Live Demo
 
-[Live Demo Link]( https://documenter.getpostman.com/view/23533434/2s93CLstja)
+[Link]( https://documenter.getpostman.com/view/23533434/2s93CLstja)
 
 ## Show your support
 
@@ -61,7 +61,7 @@ Give a ⭐️ if you like this project!
 
 - Thank the Lord for the far He has been with me all through this job search journey.
 - I would like to acknowledge Moringa school for giving me this opportunity to learn software development.
-- Appreciations to  my TM `Nancy Umutoniwase and Gilbert Cheboi` for the support she gives me.
+- Appreciations to  my TM `Nancy Umutoniwase and Gilbert Cheboi` for the support they gave me.
 
 ## Contributing
 

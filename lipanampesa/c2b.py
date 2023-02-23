@@ -1,4 +1,5 @@
 import requests
+import json
 from .import utils
 from datetime import datetime
 import base64
@@ -47,8 +48,24 @@ def lipa_na_mpesa():
         "TransactionDesc": "Join premium"
     }
 
-    response = requests.post(api_url, json=request, headers=headers)
+    res = requests.post(api_url, json=request, headers=headers)
+    mystr = res.text
+    objstr = json.loads(mystr)
 
-    print(response)
+    # print(objstr)
+
+    MerchantRequestID = objstr['MerchantRequestID']
+    CheckoutRequestID = objstr['CheckoutRequestID']
+    ResponseCode = objstr['ResponseCode']
+    ResponseDescription = objstr['ResponseDescription']
+
+    data= {
+        "requestId": MerchantRequestID,
+        "checkoutRequestId": CheckoutRequestID,
+        "responseCode": ResponseCode,
+        "responseDescription": ResponseDescription,
+        }
+
+    return data
 
 lipa_na_mpesa()

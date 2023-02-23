@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'lipanampesa',
     'knox',
     'Accounts'
-    # 'KnoxAuth',
-    # 'Authentication',
 ]
 
 MIDDLEWARE = [
