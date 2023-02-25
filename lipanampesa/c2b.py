@@ -4,6 +4,7 @@ from .import utils
 from datetime import datetime
 import base64
 from requests.auth import HTTPBasicAuth
+from .models import STKPushResponse
 
 
 unformated_timestamp = datetime.now()
@@ -52,20 +53,31 @@ def lipa_na_mpesa():
     mystr = res.text
     objstr = json.loads(mystr)
 
-    # print(objstr)
+    print(objstr)
 
     MerchantRequestID = objstr['MerchantRequestID']
     CheckoutRequestID = objstr['CheckoutRequestID']
     ResponseCode = objstr['ResponseCode']
     ResponseDescription = objstr['ResponseDescription']
+    # CustomerMessage = objstr['CustomerMessage']
 
     data= {
         "requestId": MerchantRequestID,
         "checkoutRequestId": CheckoutRequestID,
         "responseCode": ResponseCode,
         "responseDescription": ResponseDescription,
+        # "CustomerMessage": CustomerMessage
         }
 
-    return data
+    stkpush_response = STKPushResponse.objects.create(
+        merchant_request_id=data['requestId'],
+        checkout_request_id=data['checkoutRequestId'],
+        response_code=data['responseCode'],
+        response_description=data['responseDescription'],
+        # customer_message=data['CustomerMessage'],
+        )
 
+    stkpush_response.save()
+    return data
+    
 lipa_na_mpesa()
