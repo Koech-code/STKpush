@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ft2$3oku@rj9a4f^*)d(43f_858c8&!cg&!(zloy8#ivwx96mw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'https://stkpush.azurewebsites.net/']
 
